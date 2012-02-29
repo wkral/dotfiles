@@ -1,0 +1,9 @@
+#!/bin/bash
+
+TRACKER_PATH=~/Development/tracker/tracker.py
+TRACKER_DATA=~/.tracker
+
+cd $TRACKER_DATA
+
+python $TRACKER_PATH $@
+
