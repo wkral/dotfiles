@@ -29,6 +29,8 @@ set nofoldenable "I don't like code folding
 set backspace=indent,eol,start "Let my backspace fly
 set linebreak "if you're going to wrap do it right
 
+"Make the clipboard work with OSX
+set clipboard=unnamed
 
 let mapleader=","
 
