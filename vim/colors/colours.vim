@@ -8,7 +8,7 @@ if exists("syntax_on")
 endif
 endif
 
-let g:colors_name = "BusyBee"
+let g:colors_name = "colours"
 
 hi IncSearch guifg=none guibg=#303030 guisp=none gui=none ctermfg=none ctermbg=246 cterm=none
 hi WildMenu guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=none cterm=none

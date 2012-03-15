@@ -63,10 +63,13 @@ if &term =~ "xterm" || &term =~ "screen"
     let g:CommandTCancelMap = ['<ESC>', '<C-c>']
     let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
     let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
+    let g:CommandTAcceptSelectionSplitMap = ['<C-s>']
 endif
 
 set colorcolumn=80 "better version of 80 column editing
 highlight ColorColumn guibg=#592929 ctermbg=52
+
+set cursorline
 
 highlight ExtraWhitespace guibg=#292959 ctermbg=17
 au BufNewFile,BufRead * match ExtraWhitespace /\s\s\+$/
