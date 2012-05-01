@@ -20,3 +20,5 @@ do
     [ ! -e $DEST ] && ln -s $SRC $DEST 2>/dev/null
 done
 
+# Always fine it's all good
+exit 0
