@@ -1,14 +1,14 @@
-Home Folder
+Vim Config
 ===========
 
-Just my home folder the way I like it.
+Just my Vim the way I like it.
 
 Installation
 ------------
 
     cd
-    git clone git@github.com:wkral/home-folder.git .home-folder
-    cd .home-folder
-    ./homeinstall.sh
+    git clone git@github.com:wkral/vim-config.git .vim-config
+    cd .vim-config
+    ./viminstall.sh
 
 
