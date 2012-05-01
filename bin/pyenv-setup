@@ -1,4 +1,0 @@
-#!/bin/bash
-
-source ~/Development/virtualenvs/$1/bin/activate
-

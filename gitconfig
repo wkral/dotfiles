@@ -1,7 +1,0 @@
-[color]
-	ui = auto
-[user]
-	name = William Kral
-	email = william.kral@gmail.com
-[diff]
-	tool = vimdiff

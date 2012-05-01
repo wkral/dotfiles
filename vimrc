@@ -54,17 +54,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 set wildignore=*.pyc,*.jpg,*.png
 
 "Command T good for opening files
-nnoremap <leader>t :CommandT<cr>
-nnoremap <leader>f :CommandTFlush<cr>
+nnoremap <leader>t :CtrlPMixed<cr>
+nnoremap <leader>f :CtrlPClearCache<cr>
 let g:CommandTMaxHeight=20
-
-"Map the keys that xterm messes up
-if &term =~ "xterm" || &term =~ "screen"
-    let g:CommandTCancelMap = ['<ESC>', '<C-c>']
-    let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
-    let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
-    let g:CommandTAcceptSelectionSplitMap = ['<C-s>']
-endif
 
 set colorcolumn=80 "better version of 80 column editing
 highlight ColorColumn guibg=#592929 ctermbg=52
