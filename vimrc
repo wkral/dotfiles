@@ -35,15 +35,14 @@ set clipboard=unnamed
 let mapleader=","
 
 "Window switching
-nnoremap <leader>1 :1 wincmd w<cr>
-nnoremap <leader>2 :2 wincmd w<cr>
-nnoremap <leader>3 :3 wincmd w<cr>
-nnoremap <leader>4 :4 wincmd w<cr>
+for i in range(1, 9)
+    execute 'nnoremap <leader>' . i . ' :' . i . 'wincmd w<cr>'
+endfor
 
-nnoremap <leader>h :wincmd h<cr>
-nnoremap <leader>j :wincmd j<cr>
-nnoremap <leader>k :wincmd k<cr>
-nnoremap <leader>l :wincmd l<cr>
+nnoremap <c-h> :wincmd h<cr>
+nnoremap <c-j> :wincmd j<cr>
+nnoremap <c-k> :wincmd k<cr>
+nnoremap <c-l> :wincmd l<cr>
 
 "Map Ack to search the word under the cursor
 nnoremap <leader>a :Ack <cword><cr>
@@ -55,8 +54,11 @@ set wildignore=*.pyc,*.jpg,*.png
 
 "Command T good for opening files
 nnoremap <leader>t :CtrlPMixed<cr>
-nnoremap <leader>f :CtrlPClearCache<cr>
 let g:CommandTMaxHeight=20
+
+"Syntastic configuration
+let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=5
 
 set colorcolumn=80 "better version of 80 column editing
 highlight ColorColumn guibg=#592929 ctermbg=52
