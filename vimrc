@@ -44,6 +44,9 @@ nnoremap <c-j> :wincmd j<cr>
 nnoremap <c-k> :wincmd k<cr>
 nnoremap <c-l> :wincmd l<cr>
 
+"Quick redraw
+nnoremap <leader>r :redraw!<cr>
+
 "Map Ack to search the word under the cursor
 nnoremap <leader>a :Ack <cword><cr>
 
@@ -59,6 +62,7 @@ let g:CommandTMaxHeight=20
 "Syntastic configuration
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=5
+let g:syntastic_javascript_gjslint_conf=" --nojsdoc"
 
 set colorcolumn=80 "better version of 80 column editing
 highlight ColorColumn guibg=#592929 ctermbg=52
