@@ -55,6 +55,8 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=5
 let g:syntastic_javascript_gjslint_conf=" --nojsdoc"
 
+nnoremap <leader>b :BufExplorer<cr>
+
 set colorcolumn=80 "better version of 80 column editing
 highlight ColorColumn guibg=#592929 ctermbg=52
 
