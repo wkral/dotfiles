@@ -31,3 +31,6 @@
 [submodule "vim/bundle/buffer-explorer"]
 	path = vim/bundle/buffer-explorer
 	url = https://github.com/widox/vim-buffer-explorer-plugin.git
+[submodule "vim/bundle/ag"]
+	path = vim/bundle/ag
+	url = https://github.com/epmatsw/ag.vim.git
