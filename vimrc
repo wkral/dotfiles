@@ -58,11 +58,9 @@ let g:syntastic_javascript_gjslint_conf=" --nojsdoc"
 nnoremap <leader>b :BufExplorer<cr>
 
 set colorcolumn=80 "better version of 80 column editing
-highlight ColorColumn guibg=#592929 ctermbg=52
 
 set cursorline
 
-highlight ExtraWhitespace guibg=#292959 ctermbg=17
 au BufNewFile,BufRead * match ExtraWhitespace /\s\s\+$/
 match ExtraWhitespace /\s\s\+$/
 

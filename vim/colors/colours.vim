@@ -10,7 +10,7 @@ endif
 
 let g:colors_name = "colours"
 
-hi IncSearch guifg=none guibg=#303030 guisp=none gui=none ctermfg=none ctermbg=246 cterm=none
+hi IncSearch guifg=none guibg=#303030 guisp=none gui=none ctermfg=none ctermbg=241 cterm=none
 hi WildMenu guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=none cterm=none
 hi SignColumn guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=none cterm=none
 hi SpecialComment guifg=#ff9800 guibg=none guisp=none gui=none ctermfg=208 ctermbg=none cterm=none
@@ -44,13 +44,13 @@ hi Delimiter guifg=#ff9800 guibg=none guisp=none gui=none ctermfg=208 ctermbg=no
 hi Statement guifg=#7e8aa2 guibg=none guisp=none gui=none ctermfg=112 ctermbg=none cterm=none
 hi SpellRare guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=none cterm=none
 hi EnumerationValue guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=none cterm=none
-hi Comment guifg=#3f3f3f guibg=none guisp=none gui=italic ctermfg=237 ctermbg=none cterm=none
+hi Comment guifg=#3f3f3f guibg=none guisp=none gui=italic ctermfg=243 ctermbg=none cterm=none
 hi Character guifg=#ff9800 guibg=none guisp=none gui=none ctermfg=208 ctermbg=none cterm=none
 hi Float guifg=#ff9800 guibg=none guisp=none gui=none ctermfg=208 ctermbg=none cterm=none
 hi Number guifg=#ff9800 guibg=none guisp=none gui=none ctermfg=208 ctermbg=none cterm=none
 hi Boolean guifg=#b1d631 guibg=none guisp=none gui=none ctermfg=149 ctermbg=none cterm=none
 hi Operator guifg=#7e8aa2 guibg=none guisp=none gui=none ctermfg=39 ctermbg=none cterm=none
-hi CursorLine guifg=none guibg=#202020 guisp=#202020 gui=none ctermfg=none ctermbg=234 cterm=none
+hi CursorLine guifg=none guibg=#202020 guisp=#202020 gui=none ctermfg=none ctermbg=235 cterm=none
 hi Union guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=none cterm=none
 hi TabLineFill guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=none cterm=none
 hi Question guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=none cterm=none
@@ -123,4 +123,8 @@ hi DiffDelete guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=52 
 hi DiffChange guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=241 cterm=none
 
 hi StatusLineNC guifg=#939395 guibg=#303030 guisp=#303030 gui=none ctermfg=246 ctermbg=236 cterm=none
-hi StatusLine guifg=#d3d3d5 guibg=#303030 guisp=#303030 gui=none ctermfg=188 ctermbg=22 cterm=none
+hi StatusLine guifg=#d3d3d5 guibg=#303030 guisp=#303030 gui=none ctermfg=188 ctermbg=24 cterm=none
+
+hi ColorColumn guifg=none guibg=#592929 guisp=none gui=none ctermfg=none ctermbg=52 cterm=none
+
+hi ExtraWhitespace guifg=none guibg=#292959 guisp=none gui=none ctermfg=none ctermbg=17 cterm=none
