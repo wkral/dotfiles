@@ -64,3 +64,5 @@ set cursorline
 au BufNewFile,BufRead * match ExtraWhitespace /\s\s\+$/
 match ExtraWhitespace /\s\s\+$/
 
+"When switching between git branches tired of loading everything each time
+set autoread
