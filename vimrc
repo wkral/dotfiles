@@ -47,8 +47,10 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 set wildignore=*.pyc,*.jpg,*.png
 
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
 "CtrlP good for opening files
-nnoremap <leader>t :CtrlPMixed<cr>
+nnoremap <leader>t :CtrlP .<cr>
 
 "Syntastic configuration
 let g:syntastic_auto_loc_list=1
@@ -66,3 +68,9 @@ match ExtraWhitespace /\s\s\+$/
 
 "When switching between git branches tired of loading everything each time
 set autoread
+
+
+"Custom tab widths for file types
+autocmd Filetype ruby setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype eruby setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype html setlocal ts=2 sw=2 sts=2 expandtab
