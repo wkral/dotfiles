@@ -45,7 +45,7 @@ nnoremap <leader>r :redraw!<cr>
 "Auto remove trailing spaces
 autocmd BufWritePre * :%s/\s\+$//e
 
-set wildignore=*.pyc,*.jpg,*.png
+set wildignore=*/tmp/*,*/log/*,*.pyc,*.jpg,*.png
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
