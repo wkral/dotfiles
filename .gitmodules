@@ -37,3 +37,6 @@
 [submodule "vim/bundle/git-gutter"]
 	path = vim/bundle/git-gutter
 	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "vim/bundle/salt"]
+	path = vim/bundle/salt
+	url = https://github.com/saltstack/salt-vim.git
