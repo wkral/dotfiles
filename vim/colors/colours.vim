@@ -118,9 +118,9 @@ hi pythonoperator guifg=#7e8aa2 guibg=none guisp=none gui=none ctermfg=39 ctermb
 hi pythonexclass guifg=#009000 guibg=none guisp=none gui=none ctermfg=28 ctermbg=none cterm=none
 
 hi DiffText guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=none cterm=none
-hi DiffAdd guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=22 cterm=none
-hi DiffDelete guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=52 cterm=none
-hi DiffChange guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=241 cterm=none
+hi DiffAdd guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=none cterm=none
+hi DiffDelete guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=none cterm=none
+hi DiffChange guifg=none guibg=none guisp=none gui=none ctermfg=none ctermbg=237 cterm=none
 
 hi StatusLineNC guifg=#939395 guibg=#303030 guisp=#303030 gui=none ctermfg=246 ctermbg=236 cterm=none
 hi StatusLine guifg=#d3d3d5 guibg=#303030 guisp=#303030 gui=none ctermfg=188 ctermbg=24 cterm=none
