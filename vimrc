@@ -20,7 +20,6 @@ function! WindowNumber()
 endfunction
 
 "The uncool status line is back with a vengeance
-set statusline=%<%F%m\ %r%h%w%=%{fugitive#statusline()}\ [%{&ff}-%Y]\ \ %l\ of\ %L
 set laststatus=2
 
 set incsearch "hilight as I search
