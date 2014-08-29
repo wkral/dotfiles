@@ -21,6 +21,21 @@ endfunction
 
 "The uncool status line is back with a vengeance
 set laststatus=2
+let g:airline#extensions#branch#displayed_head_limit=10
+let g:airline_powerline_fonts=1
+let g:airline_mode_map = {
+      \ '__' : '---',
+      \ 'n'  : 'NOR',
+      \ 'i'  : 'INS',
+      \ 'R'  : 'RPL',
+      \ 'c'  : 'CMD',
+      \ 'v'  : 'VIS',
+      \ 'V'  : 'V-L',
+      \ '' : 'V-B',
+      \ 's'  : 'SEL',
+      \ 'S'  : 'S-L',
+      \ '' : 'S-B',
+      \ }
 
 set incsearch "hilight as I search
 set wildmode=longest,list "more bashy tab competion for file paths
@@ -55,8 +70,6 @@ nnoremap <leader>t :CtrlP .<cr>
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=5
 let g:syntastic_javascript_gjslint_conf=" --nojsdoc"
-
-nnoremap <leader>b :BufExplorer<cr>
 
 set colorcolumn=80 "better version of 80 column editing
 
