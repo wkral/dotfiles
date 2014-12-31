@@ -13,3 +13,4 @@ while n < 50 && n < line("$")
   set ft=html
 endfun
 autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
+autocmd BufNewFile,BufRead *.jinja set ft=jinja

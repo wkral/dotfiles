@@ -88,3 +88,5 @@ autocmd Filetype eruby setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype html setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype sls setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype yaml setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype yml setlocal ts=2 sw=2 sts=2 expandtab
