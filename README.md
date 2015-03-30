@@ -7,8 +7,8 @@ Installation
 ------------
 
     cd
-    git clone git@github.com:wkral/vim-config.git .vim-config
-    cd .vim-config
+    git clone git@github.com:wkral/vim-config.git
+    cd vim-config
     ./viminstall.sh
 
 
