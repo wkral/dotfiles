@@ -59,7 +59,7 @@ nnoremap <leader>r :redraw!<cr>
 "Auto remove trailing spaces
 autocmd BufWritePre * :%s/\s\+$//e
 
-set wildignore=*/tmp/*,*/log/*,*.pyc,*.jpg,*.png
+set wildignore=*/tmp/*,*/log/*,*.pyc,*.jpg,*.png,node_modules,*.class,*.jar
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
@@ -90,3 +90,6 @@ autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype sls setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype yaml setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype yml setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype jinja setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype html.mustache setlocal ts=2 sw=2 sts=2 expandtab
+
