@@ -99,4 +99,5 @@ autocmd Filetype yaml setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype yml setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype jinja setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype html.mustache setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype go setlocal noexpandtab
 
