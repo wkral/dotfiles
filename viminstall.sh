@@ -4,7 +4,7 @@
 [ ! -s viminstall.sh ] && exit 1
 
 git submodule init
-git submodule update
+git submodule update --depth 1
 
 REPO=${PWD##$HOME/}
 
