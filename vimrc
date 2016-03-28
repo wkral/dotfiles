@@ -23,18 +23,19 @@ endfunction
 set laststatus=2
 let g:airline#extensions#branch#displayed_head_limit=10
 let g:airline_powerline_fonts=1
+let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline_mode_map = {
-      \ '__' : '---',
-      \ 'n'  : 'NOR',
-      \ 'i'  : 'INS',
-      \ 'R'  : 'RPL',
-      \ 'c'  : 'CMD',
-      \ 'v'  : 'VIS',
-      \ 'V'  : 'V-L',
-      \ '' : 'V-B',
-      \ 's'  : 'SEL',
-      \ 'S'  : 'S-L',
-      \ '' : 'S-B',
+      \ '__' : '-',
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
       \ }
 
 set incsearch "hilight as I search
