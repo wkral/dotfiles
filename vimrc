@@ -78,6 +78,8 @@ endif
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=5
 let g:syntastic_javascript_gjslint_conf=" --nojsdoc"
+let g:syntastic_rust_checkers = ['rustc']
+let g:syntastic_quiet_messages = {"regex": 'is unstable and should only be used on the nightly compiler, but it is currently accepted for backwards compatibility; this will soon change, see issue #31847 for more details'}
 
 set colorcolumn=80 "better version of 80 column editing
 
