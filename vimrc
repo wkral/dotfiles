@@ -103,3 +103,5 @@ autocmd Filetype jinja setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype html.mustache setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype go setlocal noexpandtab
 
+set spelllang=en_ca
+
