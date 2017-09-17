@@ -107,3 +107,4 @@ autocmd Filetype go setlocal noexpandtab
 set spelllang=en_ca
 
 autocmd Filetype markdown setlocal spell
+autocmd Filetype gitcommit setlocal spell
