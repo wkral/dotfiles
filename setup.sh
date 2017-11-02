@@ -22,25 +22,42 @@ function latest_download_url() {
     echo "${base_url}/download/${version}/${prefix}-${version}-${suffix}"
 }
 
-function get_fzf_url() {
-    echo $(latest_download_url 'junegunn' 'fzf-bin' 'fzf' 'linux_amd64.tgz')
+
+function download() {
+    local url=$1
+
+    pushd $dl_path
+    curl -sLO $url
+    popd
 }
 
-function get_ripgrep_url() {
-    echo $(latest_download_url 'BurntSushi' 'ripgrep' 'ripgrep' \
-           'x86_64-unknown-linux-musl.tar.gz')
-}
-
-function download_prog() {
-    pushd "$dl_path"
-    local prog=$1
-    local url=$2
-
-    if [[ ! `which $prog` ]]; then
-        curl -sLO $url
-        local file=$(basename $url)
-        tar -zxf $file $bin_path
+function download_fzf() {
+    if [[ `which fzf` ]]; then
+        return
     fi
+
+    local url=$(latest_download_url 'junegunn' 'fzf-bin' 'fzf' \
+                'linux_amd64.tgz')
+
+    download $url
+    pushd $bin_path
+    local file=$(basename $url)
+    tar -zxf "${dl_path}/${file}" fzf
+    popd
+}
+
+function download_ripgrep() {
+    if [[ `which rg` ]]; then
+        return
+    fi
+
+    local url=$(latest_download_url 'BurntSushi' 'ripgrep' 'ripgrep' \
+                'x86_64-unknown-linux-musl.tar.gz')
+
+    download $url
+    pushd $bin_path
+    local file=$(basename $url)
+    tar -zxf "${dl_path}/${file}" --strip-components 1 --no-anchored 'rg'
     popd
 }
 
@@ -64,8 +81,8 @@ EOT
 
 
 if [[ "$OSTYPE" =~ ^linux ]]; then
-    download_prog 'fzf' $(get_fzf_url)
-    download_prog 'rg' $(get_ripgrep_url)
+    download_fzf
+    download_ripgrep
 fi
 
 git submodule init
