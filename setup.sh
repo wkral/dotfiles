@@ -18,7 +18,7 @@ function latest_download_url() {
     local version=$(curl -sI ${base_url}/latest | \
                     sed -n -e 's/Location.*\/\([0-9.]*\).*/\1/p')
 
-    echo "${base_url}/downloads/${version}/${project}-${version}-${ext}"
+    echo "${base_url}/download/${version}/${project}-${version}-${ext}"
 }
 
 function get_fzf_url() {
@@ -81,3 +81,4 @@ do
 done
 
 setup_gitconfig
+get_ripgrep_url
