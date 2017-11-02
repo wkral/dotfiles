@@ -4,9 +4,10 @@
 [ ! -s setup.sh ] && exit 1
 
 dl_path=~/downloads
-if [[ ! -d "$dl_path" ]]; then
-    mkdir -p $dl_path
-fi
+bin_path=~/bin
+
+mkdir -p $dl_path
+mkdir -p $bin_path
 
 function latest_download_url() {
     local author=$1
@@ -30,15 +31,17 @@ function get_ripgrep_url() {
 }
 
 function download_prog() {
+    pushd "$dl_path"
     local prog=$1
     local url=$2
 
     if [[ ! `which $prog` ]]; then
-        cd "$dl_path"
         curl -sO $url
-        local file=$(ls -1 $dl_path/$prog*)
+        local file=$(basename $url)
         echo $file
+        tar -zxf $file $bin_path
     fi
+    popd
 }
 
 function setup_gitconfig() {
@@ -61,8 +64,8 @@ EOT
 
 
 if [[ "$OSTYPE" =~ ^linux ]]; then
-    download_prog $(get_fzf_url)
-    download_prog $(get_ripgrep_url)
+    download_prog 'fzf' $(get_fzf_url)
+    download_prog 'rg' $(get_ripgrep_url)
 fi
 
 git submodule init
