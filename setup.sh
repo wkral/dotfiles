@@ -12,21 +12,22 @@ mkdir -p $bin_path
 function latest_download_url() {
     local author=$1
     local project=$2
-    local ext=$3
+    local prefix=$3
+    local suffix=$4
     local base_url="https://github.com/${author}/${project}/releases"
 
     local version=$(curl -sI ${base_url}/latest | \
                     sed -n -e 's/Location.*\/\([0-9.]*\).*/\1/p')
 
-    echo "${base_url}/download/${version}/${project}-${version}-${ext}"
+    echo "${base_url}/download/${version}/${prefix}-${version}-${suffix}"
 }
 
 function get_fzf_url() {
-    echo $(latest_download_url 'junegunn' 'fzf-bin' 'linux_amd64.tgz')
+    echo $(latest_download_url 'junegunn' 'fzf-bin' 'fzf' 'linux_amd64.tgz')
 }
 
 function get_ripgrep_url() {
-    echo $(latest_download_url 'BurntSushi' 'ripgrep' \
+    echo $(latest_download_url 'BurntSushi' 'ripgrep' 'ripgrep' \
            'x86_64-unknown-linux-musl.tar.gz')
 }
 
@@ -36,9 +37,8 @@ function download_prog() {
     local url=$2
 
     if [[ ! `which $prog` ]]; then
-        curl -sO $url
+        curl -sLO $url
         local file=$(basename $url)
-        echo $file
         tar -zxf $file $bin_path
     fi
     popd
@@ -81,4 +81,3 @@ do
 done
 
 setup_gitconfig
-get_ripgrep_url
