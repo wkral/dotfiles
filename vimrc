@@ -19,6 +19,8 @@ function! WindowNumber()
     return str
 endfunction
 
+" branch: 🜉 ᚶ up arrow: ↑ down arrow: ↓
+" Line numbers: ↓23→23
 "The uncool status line is back with a vengeance
 set laststatus=2
 let g:airline#extensions#branch#displayed_head_limit=10
@@ -62,17 +64,20 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 set wildignore=*/tmp/*,*/log/*,*.pyc,*.jpg,*.png,node_modules,*.class,*.jar
 
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-
-"CtrlP good for opening files
-nnoremap <leader>t :CtrlP .<cr>
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+if executable('rg')
+  " Use ripgrep over Grep
+  set grepprg=rg\ --vimgrep
 endif
+
+if executable('fzf')
+  "Fzf good for opening files
+  set rtp+=/usr/local/opt/fzf
+  nnoremap <leader>t :Files<cr>
+endif
+
+
+command! -nargs=+ MyGrep execute 'silent grep! <args>' | copen | redraw!
+nnoremap <leader>/ :MyGrep<space>
 
 "Syntastic configuration
 let g:syntastic_auto_loc_list=1
@@ -86,6 +91,7 @@ set cursorline
 
 au BufNewFile,BufRead * match ExtraWhitespace /\s\s\+$/
 match ExtraWhitespace /\s\s\+$/
+set nojoinspaces
 
 "When switching between git branches tired of loading everything each time
 set autoread
