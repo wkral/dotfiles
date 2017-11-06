@@ -14,11 +14,14 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 
-function! WindowNumber()
-    let str=tabpagewinnr(tabpagenr())
-    return str
-endfunction
-
+" + additions only
+" - subtractions only
+" ~ changes only
+" ± additions and subtractions
+" +̃ additions and changes
+" ⨤ additions and changes
+" ≃ changes and subtractions
+" ±̃ Additions subtractions and changes
 " branch: 🜉 ᚶ up arrow: ↑ down arrow: ↓
 " Line numbers: ↓23→23
 "The uncool status line is back with a vengeance
@@ -78,6 +81,8 @@ endif
 
 command! -nargs=+ MyGrep execute 'silent grep! <args>' | copen | redraw!
 nnoremap <leader>/ :MyGrep<space>
+" Close the quickfix and other windows with a q
+nnoremap <expr> q (!&modifiable ? ':close!<CR>' : 'q')
 
 "Syntastic configuration
 let g:syntastic_auto_loc_list=1
