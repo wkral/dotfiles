@@ -67,6 +67,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 set wildignore=*/tmp/*,*/log/*,*.pyc,*.jpg,*.png,node_modules,*.class,*.jar
 
+let g:polyglot_disabled = ['yaml']
+
 if executable('rg')
   " Use ripgrep over Grep
   set grepprg=rg\ --vimgrep
@@ -103,7 +105,7 @@ set autoread
 
 
 "Custom tab widths for file types
-autocmd Filetype ruby setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype ruby setlocal ts=2 sw=2 sts=2 expandtab re=1
 autocmd Filetype eruby setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype html setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
