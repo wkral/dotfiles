@@ -14,34 +14,54 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 
-" + additions only
-" - subtractions only
-" ~ changes only
-" ± additions and subtractions
-" +̃ additions and changes
-" ⨤ additions and changes
-" ≃ changes and subtractions
-" ±̃ Additions subtractions and changes
-" branch: 🜉 ᚶ up arrow: ↑ down arrow: ↓
+" branch: 🜉 ᚶ
+" up arrow: ↑ down arrow: ↓
 " Line numbers: ↓23→23
 "The uncool status line is back with a vengeance
 set laststatus=2
-let g:airline#extensions#branch#displayed_head_limit=10
-let g:airline_powerline_fonts=1
-let g:airline#extensions#hunks#non_zero_only = 1
-let g:airline_mode_map = {
-      \ '__' : '-',
-      \ 'n'  : 'N',
-      \ 'i'  : 'I',
-      \ 'R'  : 'R',
-      \ 'c'  : 'C',
-      \ 'v'  : 'V',
-      \ 'V'  : 'V',
-      \ '' : 'V',
-      \ 's'  : 'S',
-      \ 'S'  : 'S',
-      \ '' : 'S',
-      \ }
+let g:lightline = {
+\  'active': {
+\    'left': [
+\       ['mode', 'paste'],
+\       ['gitbranch'],
+\       ['filename']
+\    ]
+\  },
+\  'subseparator': {
+\    'left': ''
+\  },
+\  'component': {
+\    'mode': '%{strpart(lightline#mode(), 0, 1)}',
+\    'lineinfo': '↓%-3l→%-2v',
+\  },
+\  'component_function': {
+\    'gitbranch': 'GitBranchStats',
+\    'filename': 'LightlineFilename'
+\  }
+\}
+
+function! LightlineFilename()
+  let filename = expand('%:f') !=# '' ? expand('%:f') : '[No Name]'
+  let modified = &modified ? ' +' : ''
+  let readonly = &readonly ? ' 🔒' : ''
+  return filename . modified . readonly
+endfunction
+
+function! GitBranchStats()
+    let branch = fugitive#head()
+    if branch == ''
+        return ''
+    endif
+
+    let changes = GitGutterGetHunkSummary()
+    let change_val = or(changes[0] > 0 ? 0b100 : 0,
+                     \  or(changes[1] > 0 ? 0b010 : 0,
+                     \     changes[2] > 0 ? 0b001 : 0))
+
+    let char_map = ['', ' -', ' ~', ' ≃', ' +', ' ±', ' +̃', ' ±̃']
+
+    return 'ᚶ ' . branch . char_map[change_val]
+endfunction
 
 set incsearch "hilight as I search
 set wildmode=longest,list "more bashy tab competion for file paths
