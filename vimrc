@@ -54,9 +54,9 @@ function! GitBranchStats()
     endif
 
     let changes = GitGutterGetHunkSummary()
-    let change_val = or(changes[0] > 0 ? 0b100 : 0,
-                     \  or(changes[1] > 0 ? 0b010 : 0,
-                     \     changes[2] > 0 ? 0b001 : 0))
+    let change_val = or(changes[0] > 0 ? 4 : 0,
+                   \    or(changes[1] > 0 ? 2 : 0,
+                   \       changes[2] > 0 ? 1 : 0))
 
     let char_map = ['', ' -', ' ~', ' ≃', ' +', ' ±', ' +̃', ' ±̃']
 
