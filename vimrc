@@ -74,10 +74,10 @@ set clipboard=unnamed
 
 let mapleader=","
 
-nnoremap <c-h> :wincmd h<cr>
-nnoremap <c-j> :wincmd j<cr>
-nnoremap <c-k> :wincmd k<cr>
-nnoremap <c-l> :wincmd l<cr>
+nnoremap <silent> <c-h> :wincmd h<cr>
+nnoremap <silent> <c-j> :wincmd j<cr>
+nnoremap <silent> <c-k> :wincmd k<cr>
+nnoremap <silent> <c-l> :wincmd l<cr>
 
 "Quick redraw
 nnoremap <leader>r :redraw!<cr>
