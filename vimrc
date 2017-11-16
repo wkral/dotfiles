@@ -43,7 +43,7 @@ let g:lightline = {
 function! LightlineFilename()
   let filename = expand('%:f') !=# '' ? expand('%:f') : '[No Name]'
   let modified = &modified ? ' +' : ''
-  let readonly = &readonly ? ' 🔒' : ''
+  let readonly = &readonly ? '  ⃠' : ''
   return filename . modified . readonly
 endfunction
 
