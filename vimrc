@@ -105,6 +105,7 @@ command! -nargs=+ MyGrep execute 'silent grep! <args>' | copen | redraw!
 nnoremap <leader>/ :MyGrep<space>
 " Close the quickfix and other windows with a q
 nnoremap <expr> q (!&modifiable ? ':close!<CR>' : 'q')
+nnoremap <leader>. :MyGrep <cword><CR>
 
 "Syntastic configuration
 let g:syntastic_auto_loc_list=1
@@ -133,7 +134,6 @@ autocmd Filetype sls setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype yaml setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype yml setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype jinja setlocal ts=2 sw=2 sts=2 expandtab
-autocmd Filetype html.mustache setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype go setlocal noexpandtab
 
 "Spell checking
