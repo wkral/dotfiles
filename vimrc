@@ -14,9 +14,6 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 
-" branch: 🜉 ᚶ
-" up arrow: ↑ down arrow: ↓
-" Line numbers: ↓23→23
 "The uncool status line is back with a vengeance
 set laststatus=2
 let g:lightline = {
@@ -96,10 +93,10 @@ endif
 
 if executable('fzf')
   "Fzf good for opening files
-  set rtp+=/usr/local/opt/fzf
   nnoremap <leader>t :Files<cr>
 endif
 
+let g:lsc_server_commands = {'python': 'pyls'}
 
 command! -nargs=+ MyGrep execute 'silent grep! <args>' | copen | redraw!
 nnoremap <leader>/ :MyGrep<space>
