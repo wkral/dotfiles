@@ -89,6 +89,7 @@ let g:polyglot_disabled = ['yaml']
 if executable('rg')
   " Use ripgrep over Grep
   set grepprg=rg\ --vimgrep
+  set grepformat^=%f:%l:%c:%m
 endif
 
 if executable('fzf')
@@ -121,9 +122,11 @@ set nojoinspaces
 "When switching between git branches tired of loading everything each time
 set autoread
 
+"Use older regex engine as it performs better for many syntax highlights
+set re=1
 
 "Custom tab widths for file types
-autocmd Filetype ruby setlocal ts=2 sw=2 sts=2 expandtab re=1
+autocmd Filetype ruby setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype eruby setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype html setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
