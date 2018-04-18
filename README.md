@@ -1,14 +1,14 @@
-Vim Config
-===========
+Dotfiles
+========
 
-Just my Vim the way I like it.
+Just my config the way I like it.
 
 Installation
 ------------
 
     cd
-    git clone git@github.com:wkral/vim-config.git
-    cd vim-config
-    ./viminstall.sh
+    git clone git@github.com:wkral/dotfiles.git
+    cd dotfiles
+    ./setup.sh
 
 
