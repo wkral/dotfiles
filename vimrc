@@ -104,6 +104,7 @@ nnoremap <leader>/ :MyGrep<space>
 " Close the quickfix and other windows with a q
 nnoremap <expr> q (!&modifiable ? ':close!<CR>' : 'q')
 nnoremap <leader>. :MyGrep <cword><CR>
+nnoremap <leader>m :!make<CR>
 
 "Syntastic configuration
 let g:syntastic_auto_loc_list=1
