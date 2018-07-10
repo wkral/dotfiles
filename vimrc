@@ -79,6 +79,9 @@ nnoremap <silent> <c-l> :wincmd l<cr>
 "Quick redraw
 nnoremap <leader>r :redraw!<cr>
 
+"Sudo write
+cnoremap w!! w !sudo tee > /dev/null %
+
 "Auto remove trailing spaces
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -137,6 +140,7 @@ autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype sls setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype yaml setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype yml setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype json setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype jinja setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype go setlocal noexpandtab
 
