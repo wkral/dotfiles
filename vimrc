@@ -80,7 +80,7 @@ nnoremap <silent> <c-l> :wincmd l<cr>
 nnoremap <leader>r :redraw!<cr>
 
 "Sudo write
-cnoremap w!! w !sudo tee > /dev/null %
+cnoremap w!! w !sudo tee % > /dev/null
 
 "Auto remove trailing spaces
 autocmd BufWritePre * :%s/\s\+$//e
