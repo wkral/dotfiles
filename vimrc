@@ -61,6 +61,7 @@ function! GitBranchStats()
 endfunction
 
 set incsearch "hilight as I search
+set hlsearch "hilight all instances in a buffer
 set wildmode=longest,list "more bashy tab competion for file paths
 set nofoldenable "I don't like code folding
 set backspace=indent,eol,start "Let my backspace fly
