@@ -1,16 +1,9 @@
-set -o vi
-
-alias vi="vim"
-
 export EDITOR=vim
-
-stty -ixon -ixoff
+export BROWSER=firefox
 
 export FZF_DEFAULT_COMMAND='rg --files --follow'
 
-export PATH=~/bin:$PATH
-
-if [[ -f ~/.local_profile ]]; then
-    source ~/.local_profile
+if [[ -f "$HOME/.local_profile" ]]; then
+    source "$HOME/.local_profile"
 fi
 

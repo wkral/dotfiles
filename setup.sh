@@ -90,7 +90,7 @@ git submodule update --depth 1
 
 repo=${PWD##$HOME/}
 
-for f in .vim .vimrc .gvimrc .bash_profile .gitignore_global .tmux.conf
+for f in .vim .vimrc .gvimrc .bash_profile .gitignore_global .tmux.conf .inputrc
 do
     dest=~/$f
     src=$repo/${f#.}
