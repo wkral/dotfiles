@@ -1,2 +1,8 @@
-set editing-mode vi
 set show-mode-in-prompt on
+
+set keymap vi-command
+"v": ""
+"gg": vi-fetch-history
+"G": end-of-history
+
+set editing-mode vi
